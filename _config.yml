@@ -1,5 +1,4 @@
-# Set theme
-theme: garth-jekyll-theme
+theme: jekyll-whiteglass
 
 # File excludes
 exclude:
