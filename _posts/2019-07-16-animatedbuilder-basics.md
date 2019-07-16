@@ -8,10 +8,10 @@ excerpt: Basic example with AnimatedBuilder
 
 AnimatedBuilder need to have 2 main arguments specified:
 
-* animation - usually it instance of AnimationController
+* animation - instance of AnimationController
 * builder - build function used for updating widget tree with new animated value.
 
-Example of statfull widget with `AnimatedBuilder`:
+Example of statefull widget with `AnimatedBuilder`:
 
 ```dart
 class AnimBuilderPage extends StatefulWidget {
@@ -62,7 +62,11 @@ class _AnimBuilderPageState extends State<AnimBuilderPage>
 ```
 
 Basic concepts of `AnimationController` and `Tween` objects:
-* `AnimationController` can be initialized only in state class of statefull widget with `SingleTickerProviderStateMixin` mixin, because this mixin will provide ticker state so `AnimationController` will calculate new value
-* `AnimationController` is just a iterator (function) that returns value from range 0.0 to 1.0 by default
+* `AnimationController` can be initialized only in state class of statefull widget with `SingleTickerProviderStateMixin` mixin, because this mixin will provide ticker state to `AnimationController`
+* `AnimationController` is just a iterator (function) that returns value from range 0.0 to 1.0 by default when ticker chaning state
 * We can map actual `AnimationController` value from default range to any different range with `Tween`.
 * We can connect different `Tween`s object to 1 `AnimationController`. This will allow us create complex animations.
+
+Result (I've updated widget tree a bit):
+
+![image tooltip here](/assets/images/animated_builder.gif)
