@@ -18,10 +18,8 @@ Before all UX proposals and coding, I need one last thing. It's [travel checklis
 
 ## UX proposal
 
-Home page
+You can check it here: [https://ibb.co/album/ihESYv](https://ibb.co/album/ihESYv "https://ibb.co/album/ihESYv")
 
-![Home page](/uploads/Home.png "Home page")
+## Results
 
-Checklist details
-
-![](/uploads/Add Item in checklist.png)
+[https://play.google.com/store/apps/details?id=com.packie.packie](https://play.google.com/store/apps/details?id=com.packie.packie "https://play.google.com/store/apps/details?id=com.packie.packie")
