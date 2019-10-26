@@ -19,7 +19,7 @@ Before all UX proposals and coding, I need one last thing. It's [travel checklis
 
 ## UX proposal
 
-You can check it here: [https://ibb.co/album/ihESYv](https://ibb.co/album/ihESYv "https://ibb.co/album/ihESYv")
+[https://ibb.co/album/ihESYv](https://ibb.co/album/ihESYv "https://ibb.co/album/ihESYv")
 
 ## Code
 
