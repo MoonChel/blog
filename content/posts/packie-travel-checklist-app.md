@@ -4,7 +4,8 @@ description: App, which will help you to pack up and don't forget anything
 date: 2019-10-25T22:00:00Z
 
 ---
-When I travel, I usually pack my backpack with checklist in mind, but sometimes I forget something small, like a toothbrush because human's memory is not perfect. I thought, I can create a mobile app, that will help me to pack my things before travelling. I called it: Packie.
+When I travel, I usually pack my backpack with checklist in mind, but sometimes I forget something small, like a toothbrush because human's memory is not perfect. I thought, I can create a mobile app, that will help me to pack my things before travelling.   
+I called it: Packie.
 
 ## MVP definition
 
