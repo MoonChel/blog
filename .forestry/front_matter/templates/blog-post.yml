@@ -12,4 +12,5 @@ fields:
   name: date
   label: date
 pages:
+- content/posts/explorer.md
 - content/posts/packie-travel-checklist-app.md
