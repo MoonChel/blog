@@ -1,5 +1,5 @@
 ---
-title: Packie - travel checklist app
+title: Packie
 description: App, which will help you to pack up and don't forget anything
 date: 2019-10-25T22:00:00Z
 
@@ -14,6 +14,12 @@ When I travel, I usually pack my backpack with checklist in mind, but sometimes 
 
 ## Development
 
-Before all UX proposals and coding, I need one last thing. It's [travel checklist](https://www.smartertravel.com/uploads/2019/05/The-Ultimate-Packing-List_Interactive-FINAL.pdf) itself, which will be used as default one for initiating main process. 
+Before all UX proposals and coding, I need one last thing. It's [travel checklist](https://www.smartertravel.com/uploads/2019/05/The-Ultimate-Packing-List_Interactive-FINAL.pdf) itself, which will be used as default one for initiating main process.
 
 ## UX proposal
+
+Home page
+
+![Home page](/uploads/Home.png "Home page")
+
+![](/uploads/Add Item in checklist – 1.png)
