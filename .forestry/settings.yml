@@ -5,9 +5,8 @@ admin_path: ''
 webhook_url: 
 sections:
 - type: document
-  path: gridsome.config.js
-  label: Settings
-  match: "**/*"
+  path: "./gridsome.config.js"
+  label: General settings
 - type: directory
   path: content/posts
   label: Posts
