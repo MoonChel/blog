@@ -8,8 +8,8 @@ When I travel, I usually pack my backpack with checklist in mind, but sometimes 
 
 ## MVP definition
 
-1. Checklists overview - [crud](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete "crud") functionality
-2. Single item - [crud](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete "crud")
+1. Checklists overview - [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete "crud") functionality
+2. Single item - [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete "crud")
 3. Packing tips page
 
 ## Development
@@ -22,4 +22,6 @@ Home page
 
 ![Home page](/uploads/Home.png "Home page")
 
-![](/uploads/Add Item in checklist – 1.png)
+Checklist details
+
+![](/uploads/Add Item in checklist.png)
