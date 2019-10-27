@@ -1,7 +1,7 @@
 ---
 title: 'Explorer '
 description: App, which will help you find a good place to eat / drink, have fun
-date: 2019-10-25T22:00:00Z
+date: 2019-10-25T22:00:00.000+00:00
 
 ---
 Everyone at least ones were in the situation, when you scrolling apps like foursquare or google maps straggling to pick 1 place to go there. It's so many of them, so you never sure if one you selected is the right one. This is called [paradox of choice](https://en.wikipedia.org/wiki/The_Paradox_of_Choice "paradox of choice"). Don't forget that places are different in concepts.  
@@ -22,3 +22,5 @@ That's why I developed my own app, called: Explorer.
 [https://github.com/MoonChel/explorer/settings](https://github.com/MoonChel/explorer/settings "https://github.com/MoonChel/explorer/settings")
 
 ## Results
+
+\`[https://www.youtube.com/watch?v=X2Hdd5xK8jU](https://www.youtube.com/watch?v=X2Hdd5xK8jU "https://www.youtube.com/watch?v=X2Hdd5xK8jU")\`
