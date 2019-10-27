@@ -15,6 +15,12 @@ module.exports = {
         typeName: 'Post',
         route: '/blog/:slug'
       },
+    },
+    {
+      use: '@gridsome/plugin-google-analytics',
+      options: {
+        id: 'UA-109238094-2'
+      }
     }
   ],
   transformers: {
