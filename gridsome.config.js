@@ -14,6 +14,11 @@ module.exports = {
         path: 'content/posts/**/*.md',
         typeName: 'Post',
         route: '/blog/:slug'
+      },
+      remark: {
+        plugins: [
+          ['gridsome-plugin-remark-youtube']
+        ]
       }
     }
   ],
@@ -27,4 +32,5 @@ module.exports = {
       ]
     }
   },
+
 }
