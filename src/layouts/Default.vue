@@ -1,6 +1,12 @@
 <template>
   <main class="layout" role="main">
     <slot />
+    <hr class="line" />
+    <div style="text-align: center;">
+      <a href="https://t.me/triangulacia">Telegram</a>
+      |
+      <a href="https://keybase.io/vlado_chernenko">Keybase</a>
+    </div>
   </main>
 </template>
 
@@ -11,7 +17,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 .layout {

@@ -51,7 +51,6 @@ query {
   font-size: 35px;
   text-align: center;
   line-height: 20px;
-  padding: 0.7em;
 }
 
 .header h2 {
