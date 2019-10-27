@@ -15,11 +15,6 @@ module.exports = {
         typeName: 'Post',
         route: '/blog/:slug'
       },
-      remark: {
-        plugins: [
-          ['gridsome-plugin-remark-youtube']
-        ]
-      }
     }
   ],
   transformers: {
