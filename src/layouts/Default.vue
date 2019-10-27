@@ -6,6 +6,8 @@
       <a href="https://t.me/triangulacia">Telegram</a>
       |
       <a href="https://keybase.io/vlado_chernenko">Keybase</a>
+      |
+      <a href="https://www.linkedin.com/in/vladimir-chernenko/">Linkedin</a>
     </div>
   </main>
 </template>
