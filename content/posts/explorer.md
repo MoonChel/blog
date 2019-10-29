@@ -19,7 +19,7 @@ That's why I developed my own app, called: Explorer.
 
 ## Code
 
-[https://github.com/MoonChel/explorer/settings](https://github.com/MoonChel/explorer/settings "https://github.com/MoonChel/explorer/settings")
+[https://github.com/MoonChel/explorer](https://github.com/MoonChel/explorer "https://github.com/MoonChel/explorer")
 
 ## Results
 
