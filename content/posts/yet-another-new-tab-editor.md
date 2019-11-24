@@ -23,3 +23,7 @@ I used a small trick to compile this [vuejs](https://vuejs.org/ "vuejs") project
 You can check it here:
 
 [https://github.com/MoonChel/yet-another-new-tab-editor](https://github.com/MoonChel/yet-another-new-tab-editor "https://github.com/MoonChel/yet-another-new-tab-editor")
+
+Chrome web store extension:
+
+[https://chrome.google.com/webstore/detail/yet-another-new-tab-edito/fehhbbgjdcpfageameblmmlioaohjcih?hl=en&authuser=0](https://chrome.google.com/webstore/detail/yet-another-new-tab-edito/fehhbbgjdcpfageameblmmlioaohjcih?hl=en&authuser=0 "https://chrome.google.com/webstore/detail/yet-another-new-tab-edito/fehhbbgjdcpfageameblmmlioaohjcih?hl=en&authuser=0")
