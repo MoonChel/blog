@@ -1,7 +1,7 @@
 ---
 title: Yet another new tab editor
 description: We need more chrome extensions, MORE!
-date: 2019-11-23T23:00:00Z
+date: 2019-11-23T23:00:00.000+00:00
 
 ---
 Last week I was looking for chrome extension, which will support some simple notes management in new browser tab, plus markdown editor.
@@ -12,7 +12,7 @@ Here is my version of notes editor in new tab.
 
 ## Available features:
 
-1. Markdown support - thanks to [tiptap](https://tiptap.scrumpy.io/ "tiptap")
+1. Markdown support & `**live**` preview - thanks to [tiptap](https://tiptap.scrumpy.io/ "tiptap")
 2. Notes management - thanks to [vuex](https://vuex.vuejs.org/ "vuex") & [vuex-persist](https://github.com/championswimmer/vuex-persist "vuex persist")
 3. Common, it's just nice - thanks to [chota](https://jenil.github.io/chota/ "chota")
 
