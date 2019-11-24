@@ -6,7 +6,7 @@ date: 2019-11-23T23:00:00Z
 ---
 Last week I was looking for chrome extension, which will support some simple notes management in new browser tab, plus markdown editor.
 
-I failed. I hate to fail.
+I failed. I hate failure.
 
 Here is my version of notes editor in new tab.
 
