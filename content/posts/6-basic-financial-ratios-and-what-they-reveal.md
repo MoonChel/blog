@@ -1,5 +1,5 @@
 ---
-title: 6 Basic Financial Ratios and What They Reveal
+title: 6 Basic Financial Ratios
 description: ''
 date: 2021-02-05T23:00:00Z
 
