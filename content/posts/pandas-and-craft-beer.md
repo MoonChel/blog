@@ -89,14 +89,13 @@ Ok, we can start with simple analysis. At the beginning we need to understand wh
 How many breweries in each state?
 
     beers.state.value_counts().head()
-
+    
      CO    265
      CA    183
      MI    162
      IN    139
      TX    130
     Name: state, dtype: int64
-    
 
 Ok, that was simple, but what if I want to know top 5 states with highest **abv** in beer?
 
@@ -115,7 +114,7 @@ People usually understand statistical data better if they are represented in gra
 
     beers.groupby('state')['abv'].mean().sort_values( ascending=False).plot(kind='bar', ylim=(5,7), colormap='summer') 
 
-![](\~/assets/untitled_13_1.png)
+![](/v1613839393/blog/Untitled_13_1_e5nvef.png)
 
 Cool, here we can see one interesting thing. Even though **DC** is first in mean **abv**, **CO** has beer with highest **abv** among all states and I want to find which brewery craft it.
 
@@ -134,12 +133,12 @@ Ok, I have another question to my dataset. Can I please have a graph of top 5 ci
 
     beers.groupby('city')['brewery'].nunique().sort_values( ascending=False).head().plot(kind='bar', title='Yep, you can.', colormap='summer')
 
-![](\~/assets/untitled_16_1.png)
+![](/v1613839393/blog/Untitled_16_1_zsoogm.png)
 
 ### Same data as table
 
     beers.groupby('city')['brewery'].nunique().sort_values(ascending=False).head()
-
+    
     city
     Portland    17
     Boulder      9
@@ -147,12 +146,11 @@ Ok, I have another question to my dataset. Can I please have a graph of top 5 ci
     Chicago      9
     Denver       8
     Name: brewery, dtype: int64
-    
 
 And now I want to make beer test drive in Portland. But wait, can I consider Portland as city with highest number of beer styles?
 
     beers.groupby('city')['beer'].nunique().sort_values(ascending=False).head()
-
+    
     city
     Grand Rapids    66
     Portland        53
@@ -160,7 +158,6 @@ And now I want to make beer test drive in Portland. But wait, can I consider Por
     Indianapolis    43
     Boulder         41
     Name: beer, dtype: int64
-    
 
 Nope, you can see that Grand Rapids has more craft beer styles than Portland, but lower number of breweries. Grand Rapids is not even in top 5. Ok, I have decided to beer travel to Grand Rapids. Which breweries I must visit?
 
