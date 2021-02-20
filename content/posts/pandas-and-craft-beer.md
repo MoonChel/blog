@@ -13,11 +13,11 @@ At the beginning we need make out data a little bit clearer. In real data analys
     breweries = pd.read_csv('breweries.csv') 
     beers.head() 
 
-| Unnamed: 0 | abv | ibu | id | name | style | brewery_id | ounces |
-| 0 | 0 | 0.050 | NaN | 1436 | Pub Beer | American Pale Lager | 408 | 12.0 |
-| 1 | 1 | 0.066 | NaN | 2265 | Devil's Cup | American Pale Ale (APA) | 177 | 12.0 |
-| 2 | 2 | 0.071 | NaN | 2264 | Rise of the Phoenix | American IPA | 177 | 12.0 |
-| 3 | 3 | 0.090 | NaN | 2263 | Sinister | American Double / Imperial IPA | 177 | 12.0 |
+| Unnamed: 0 | abv | ibu | id | name | style | brewery_id | ounces |  
+| 0 | 0 | 0.050 | NaN | 1436 | Pub Beer | American Pale Lager | 408 | 12.0 |  
+| 1 | 1 | 0.066 | NaN | 2265 | Devil's Cup | American Pale Ale (APA) | 177 | 12.0 |  
+| 2 | 2 | 0.071 | NaN | 2264 | Rise of the Phoenix | American IPA | 177 | 12.0 |  
+| 3 | 3 | 0.090 | NaN | 2263 | Sinister | American Double / Imperial IPA | 177 | 12.0 |  
 | 4 | 4 | 0.075 | NaN | 2262 | Sex and Candy | American IPA | 177 | 12.0 |
 
 This table contains some evident problems, such as NaN values in **ibu** column and useless columns **Unnamed: 0** and **id**. Firstly we can remove useless column in beers table with:
@@ -64,11 +64,10 @@ It's 99% prepared for analysis, and last things can be describe as cosmetic corr
     beers['abv'].fillna(0.0, inplace=True) 
     beers.head()
 
-|  | abv | ibu | name_x | style | brewery_id | ounces | name_y | city | state |
-| 0 | 5.0 | 0.0 | Pub Beer | American Pale Lager | 408 | 12.0 | 10 Barrel Brewing Company | Bend | OR |
-| 1 | 6.6 | 0.0 | Devil's Cup | American Pale Ale (APA) | 177 | 12.0 | 18th Street Brewery | Gary | IN |
-| 2 | 7.1 | 0.0 | Rise of the Phoenix | American IPA | 177 | 12.0 | 18th Street Brewery | Gary | IN |
-| 3 | 9.0 | 0.0 | Sinister | American Double / Imperial IPA | 177 | 12.0 | 18th Street Brewery | Gary | IN |
+|  | abv | ibu | name_x | style | brewery_id | ounces | name_y | city | state |  
+| 0 | 5.0 | 0.0 | Pub Beer | American Pale Lager | 408 | 12.0 | 10 Barrel Brewing Company | Bend | OR  | 1 | 6.6 | 0.0 | Devil's Cup | American Pale Ale (APA) | 177 | 12.0 | 18th Street Brewery | Gary | IN |  
+| 2 | 7.1 | 0.0 | Rise of the Phoenix | American IPA | 177 | 12.0 | 18th Street Brewery | Gary | IN |  
+| 3 | 9.0 | 0.0 | Sinister | American Double / Imperial IPA | 177 | 12.0 | 18th Street Brewery | Gary | IN |  
 | 4 | 7.5 | 0.0 | Sex and Candy | American IPA | 177 | 12.0 | 18th Street Brewery | Gary | IN |
 
 Ups, I forgot about **name_x** and **name_y**. When we have merged two tables, columns with same names were changed to make them unique.
@@ -77,11 +76,11 @@ Ups, I forgot about **name_x** and **name_y**. When we have merged two tables, c
     beers.drop('brewery_id', axis=1, inplace=True) 
     beers.head()
 
-|  | abv | ibu | beer | style | ounces | brewery | city | state |
-| 0 | 5.0 | 0.0 | Pub Beer | American Pale Lager | 12.0 | 10 Barrel Brewing Company | Bend | OR |
-| 1 | 6.6 | 0.0 | Devil's Cup | American Pale Ale (APA) | 12.0 | 18th Street Brewery | Gary | IN |
-| 2 | 7.1 | 0.0 | Rise of the Phoenix | American IPA | 12.0 | 18th Street Brewery | Gary | IN |
-| 3 | 9.0 | 0.0 | Sinister | American Double / Imperial IPA | 12.0 | 18th Street Brewery | Gary | IN |
+|  | abv | ibu | beer | style | ounces | brewery | city | state |  
+| 0 | 5.0 | 0.0 | Pub Beer | American Pale Lager | 12.0 | 10 Barrel Brewing Company | Bend | OR |  
+| 1 | 6.6 | 0.0 | Devil's Cup | American Pale Ale (APA) | 12.0 | 18th Street Brewery | Gary | IN |  
+| 2 | 7.1 | 0.0 | Rise of the Phoenix | American IPA | 12.0 | 18th Street Brewery | Gary | IN |  
+| 3 | 9.0 | 0.0 | Sinister | American Double / Imperial IPA | 12.0 | 18th Street Brewery | Gary | IN |  
 | 4 | 7.5 | 0.0 | Sex and Candy | American IPA | 12.0 | 18th Street Brewery | Gary | IN |
 
 Ok, we can start with simple analysis. At the beginning we need to understand what we want to achieve. **We can do anything we want with this data.**
@@ -101,11 +100,11 @@ Ok, that was simple, but what if I want to know top 5 states with highest **abv*
 
     beers[['abv', 'state']].sort_values(by='abv', ascending=False).head() 
 
-|  | abv | state |
-| 2278 | 12.8 | CO |
-| 70 | 12.5 | KY |
-| 2189 | 12.0 | IN |
-| 2279 | 10.4 | CO |
+|  | abv | state |  
+| 2278 | 12.8 | CO |  
+| 70 | 12.5 | KY |  
+| 2189 | 12.0 | IN |  
+| 2279 | 10.4 | CO |  
 | 1857 | 10.0 | NY |
 
 People usually understand statistical data better if they are represented in graphs. Pandas can help with it.
@@ -122,11 +121,10 @@ Cool, here we can see one interesting thing. Even though **DC** is first in mean
 
     beers[beers['state'].str.contains('CO')].sort_values(by='abv', ascending=False).head()
 
-|  | abv | ibu | beer | style | ounces | brewery | city | state |
-| 2278 | 12.8 | 0.0 | Lee Hill Series Vol. 5 - Belgian Style Quadrup... | Quadrupel (Quad) | 19.2 | Upslope Brewing Company | Boulder | CO |
-| 2279 | 10.4 | 0.0 | Lee Hill Series Vol. 4 - Manhattan Style Rye Ale | Rye Beer | 19.2 | Upslope Brewing Company | Boulder | CO |
-| 1586 | 9.9 | 98.0 | Ten Fidy Imperial Stout (2007) | Russian Imperial Stout | 12.0 | Oskar Blues Brewery | Lyons | CO |
-| 1578 | 9.9 | 98.0 | Ten Fidy Imperial Stout | Russian Imperial Stout | 12.0 | Oskar Blues Brewery | Longmont | CO |
+|  | abv | ibu | beer | style | ounces | brewery | city | state |  
+| 2278 | 12.8 | 0.0 | Lee Hill Series Vol. 5 - Belgian Style Quadrup... | Quadrupel (Quad) | 19.2 | Upslope Brewing Company | Boulder | CO |  
+| 2279 | 10.4 | 0.0 | Lee Hill Series Vol. 4 - Manhattan Style Rye Ale | Rye Beer | 19.2 | Upslope Brewing Company | Boulder | CO |  
+| 1586 | 9.9 | 98.0 | Ten Fidy Imperial Stout (2007) | Russian Imperial Stout | 12.0 | Oskar Blues Brewery | Lyons | CO | | 1578 | 9.9 | 98.0 | Ten Fidy Imperial Stout | Russian Imperial Stout | 12.0 | Oskar Blues Brewery | Longmont | CO |  
 | 2286 | 9.9 | 90.0 | Upslope Imperial India Pale Ale | American Double / Imperial IPA | 19.2 | Upslope Brewing Company | Boulder | CO |
 
 Ok, I have another question to my dataset. Can I please have a graph of top 5 cities sorted by breweries?
@@ -163,13 +161,13 @@ Nope, you can see that Grand Rapids has more craft beer styles than Portland, bu
 
     beers[beers['city'].str.contains('Grand Rapids')].drop( ['ounces', 'state', 'city'], axis=1)
 
-|  | abv | ibu | beer | style | brewery |
-| 388 | 6.7 | 0.0 | Belfort | Saison / Farmhouse Ale | Brewery Vivant |
-| 389 | 6.0 | 0.0 | Star Runner | Belgian Pale Ale | Brewery Vivant |
-| 390 | 9.8 | 0.0 | Tart Side of the Barrel | American Double / Imperial Stout | Brewery Vivant |
-| 391 | 6.0 | 0.0 | Linnaeus Mango IPA | American IPA | Brewery Vivant |
-| 392 | 7.0 | 0.0 | Beasts A'Burnin' | Rauchbier | Brewery Vivant |
-| 393 | 7.7 | 0.0 | Verdun | Bière de Garde | Brewery Vivant |
+|  | abv | ibu | beer | style | brewery |  
+| 388 | 6.7 | 0.0 | Belfort | Saison / Farmhouse Ale | Brewery Vivant |  
+| 389 | 6.0 | 0.0 | Star Runner | Belgian Pale Ale | Brewery Vivant |  
+| 390 | 9.8 | 0.0 | Tart Side of the Barrel | American Double / Imperial Stout | Brewery Vivant |  
+| 391 | 6.0 | 0.0 | Linnaeus Mango IPA | American IPA | Brewery Vivant |  
+| 392 | 7.0 | 0.0 | Beasts A'Burnin' | Rauchbier | Brewery Vivant |  
+| 393 | 7.7 | 0.0 | Verdun | Bière de Garde | Brewery Vivant |  
 | ... | ... | ... | ... | ... | ... |
 
 66 rows × 5 columns
