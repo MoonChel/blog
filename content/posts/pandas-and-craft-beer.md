@@ -113,7 +113,7 @@ People usually understand statistical data better if they are represented in gra
 
     beers.groupby('state')['abv'].mean().sort_values( ascending=False).plot(kind='bar', ylim=(5,7), colormap='summer') 
 
-![](/v1613839393/blog/Untitled_13_1_e5nvef.png)
+![](https://res.cloudinary.com/ducpttwlw/image/upload/v1613839393/blog/Untitled_13_1_e5nvef.png)
 
 Cool, here we can see one interesting thing. Even though **DC** is first in mean **abv**, **CO** has beer with highest **abv** among all states and I want to find which brewery craft it.
 
@@ -131,7 +131,7 @@ Ok, I have another question to my dataset. Can I please have a graph of top 5 ci
 
     beers.groupby('city')['brewery'].nunique().sort_values( ascending=False).head().plot(kind='bar', title='Yep, you can.', colormap='summer')
 
-![](/v1613839393/blog/Untitled_16_1_zsoogm.png)
+![](https://res.cloudinary.com/ducpttwlw/image/upload/v1613839393/blog/Untitled_16_1_zsoogm.png)
 
 ### Same data as table
 
