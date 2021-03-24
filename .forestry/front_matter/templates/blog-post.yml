@@ -13,6 +13,7 @@ fields:
   label: date
 pages:
 - content/posts/6-basic-financial-ratios-and-what-they-reveal.md
+- content/posts/all-in-1-repo-fastapi-api-client.md
 - content/posts/explorer.md
 - content/posts/packie-travel-checklist-app.md
 - content/posts/pandas-and-craft-beer.md
