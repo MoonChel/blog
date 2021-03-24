@@ -1,5 +1,5 @@
 ---
-title: All in 1 repo </br> FastAPI & API client
+title: All in 1 repo - FastAPI & API client
 description: Sharing data models between API client and API itself
 date: 2021-03-23T23:00:00Z
 

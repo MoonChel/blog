@@ -1,11 +1,15 @@
 <template>
   <Layout>
-    <br>
-    <g-link to="/" class="link">  &larr; Go Back</g-link>
+    <br />
+    <g-link to="/" class="link"> &larr; Go Back</g-link>
+
     <div class="post-title">
       <h1 v-html="$page.post.title"></h1>
-      <p class="post-date"> {{ $page.post.date}} | {{$page.post.timeToRead}} min read</p>
+      <p class="post-date">
+        {{ $page.post.date }} | {{ $page.post.timeToRead }} min read
+      </p>
     </div>
+
     <div class="post-content">
       <p v-html="$page.post.content" />
     </div>
@@ -25,13 +29,10 @@ query Post ($path: String!) {
 </page-query>
 
 <style>
-
 .post-title {
   text-align: center;
-  font-size: 30px;
-  line-height: 10px;
-  padding: 2em 0;
-  font-family: 'Stylish';
+  font-size: 25px;
+  font-family: "Stylish";
 }
 
 .post-date {
