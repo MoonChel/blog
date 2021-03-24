@@ -1,7 +1,7 @@
 ---
 title: Pandas and craft beer
 description: Little observation with Python Pandas
-date: 2021-02-19T23:00:00Z
+date: 2021-02-19T23:00:00.000+00:00
 
 ---
 Hi, today we will discuss example of using [Python Pandas](http://pandas.pydata.org/) on little interesting dataset from [Kaggle](https://www.kaggle.com/). Dataset contains [2K+ craft canned beers from the US and 500+ breweries in the United States](https://www.kaggle.com/nickhould/craft-cans). In the beginning we need to prepare our virtual environment. The easiest way to do it is to use [Anaconda](https://www.continuum.io/downloads). In this little research I will use Python 3, and if you have not already switched from 2 to 3, you can now. You can access all materials via IPython Notebook via this [link](https://www.kaggle.com/moonchel/d/nickhould/craft-cans/little-exploration-of-craft-beer/).
@@ -13,11 +13,18 @@ At the beginning we need make out data a little bit clearer. In real data analys
     breweries = pd.read_csv('breweries.csv') 
     beers.head() 
 
-| Unnamed: 0 | abv | ibu | id | name | style | brewery_id | ounces |  
-| 0 | 0 | 0.050 | NaN | 1436 | Pub Beer | American Pale Lager | 408 | 12.0 |  
-| 1 | 1 | 0.066 | NaN | 2265 | Devil's Cup | American Pale Ale (APA) | 177 | 12.0 |  
-| 2 | 2 | 0.071 | NaN | 2264 | Rise of the Phoenix | American IPA | 177 | 12.0 |  
-| 3 | 3 | 0.090 | NaN | 2263 | Sinister | American Double / Imperial IPA | 177 | 12.0 |  
+| Unnamed: 0 | abv | ibu | id | name | style | brewery_id | ounces |
+
+|--|--|--|--|--|--|--|--|
+
+| 0 | 0 | 0.050 | NaN | 1436 | Pub Beer | American Pale Lager | 408 | 12.0 |
+
+| 1 | 1 | 0.066 | NaN | 2265 | Devil's Cup | American Pale Ale (APA) | 177 | 12.0 |
+
+| 2 | 2 | 0.071 | NaN | 2264 | Rise of the Phoenix | American IPA | 177 | 12.0 |
+
+| 3 | 3 | 0.090 | NaN | 2263 | Sinister | American Double / Imperial IPA | 177 | 12.0 |
+
 | 4 | 4 | 0.075 | NaN | 2262 | Sex and Candy | American IPA | 177 | 12.0 |
 
 This table contains some evident problems, such as NaN values in **ibu** column and useless columns **Unnamed: 0** and **id**. Firstly we can remove useless column in beers table with:
