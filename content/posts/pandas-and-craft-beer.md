@@ -13,19 +13,10 @@ At the beginning we need make out data a little bit clearer. In real data analys
     breweries = pd.read_csv('breweries.csv') 
     beers.head() 
 
-| Unnamed: 0 | abv | ibu | id | name | style | brewery_id | ounces |
-
-|--|--|--|--|--|--|--|--|
-
-| 0 | 0 | 0.050 | NaN | 1436 | Pub Beer | American Pale Lager | 408 | 12.0 |
-
-| 1 | 1 | 0.066 | NaN | 2265 | Devil's Cup | American Pale Ale (APA) | 177 | 12.0 |
-
-| 2 | 2 | 0.071 | NaN | 2264 | Rise of the Phoenix | American IPA | 177 | 12.0 |
-
-| 3 | 3 | 0.090 | NaN | 2263 | Sinister | American Double / Imperial IPA | 177 | 12.0 |
-
-| 4 | 4 | 0.075 | NaN | 2262 | Sex and Candy | American IPA | 177 | 12.0 |
+| Unnamed: 0 | abv | ibu | id | name | style | brewery_id | ounces |  
+| 0 | 0 | 0.050 | NaN | 1436 | Pub Beer | American Pale Lager | 408 | 12.0 |  
+| 1 | 1 | 0.066 | NaN | 2265 | Devil's Cup | American Pale Ale (APA) | 177 | 12.0 |  
+| 2 | 2 | 0.071 | NaN | 2264 | Rise of the Phoenix | American IPA | 177 | 12.0 |  
 
 This table contains some evident problems, such as NaN values in **ibu** column and useless columns **Unnamed: 0** and **id**. Firstly we can remove useless column in beers table with:
 
@@ -41,8 +32,6 @@ In breweries table we will just renamed this column, because of future use in ta
 | 0 | 0.050 | NaN | Pub Beer | American Pale Lager | 408 | 12.0 |
 | 1 | 0.066 | NaN | Devil's Cup | American Pale Ale (APA) | 177 | 12.0 |
 | 2 | 0.071 | NaN | Rise of the Phoenix | American IPA | 177 | 12.0 |
-| 3 | 0.090 | NaN | Sinister | American Double / Imperial IPA | 177 | 12.0 |
-| 4 | 0.075 | NaN | Sex and Candy | American IPA | 177 | 12.0 |
 
     breweries.head() 
 
@@ -50,8 +39,6 @@ In breweries table we will just renamed this column, because of future use in ta
 | 0 | 0 | NorthGate Brewing | Minneapolis | MN |
 | 1 | 1 | Against the Grain Brewery | Louisville | KY |
 | 2 | 2 | Jack's Abby Craft Lagers | Framingham | MA |
-| 3 | 3 | Mike Hess Brewing Company | San Diego | CA |
-| 4 | 4 | Fort Point Beer Company | San Francisco | CA |
 
 Now, when we have column in beers table **brewery_id**, which is simple row index in breweries table, we can merge two tables.
 
@@ -62,8 +49,6 @@ Now, when we have column in beers table **brewery_id**, which is simple row inde
 | 0 | 0.050 | NaN | Pub Beer | American Pale Lager | 408 | 12.0 | 10 Barrel Brewing Company | Bend | OR |
 | 1 | 0.066 | NaN | Devil's Cup | American Pale Ale (APA) | 177 | 12.0 | 18th Street Brewery | Gary | IN |
 | 2 | 0.071 | NaN | Rise of the Phoenix | American IPA | 177 | 12.0 | 18th Street Brewery | Gary | IN |
-| 3 | 0.090 | NaN | Sinister | American Double / Imperial IPA | 177 | 12.0 | 18th Street Brewery | Gary | IN |
-| 4 | 0.075 | NaN | Sex and Candy | American IPA | 177 | 12.0 | 18th Street Brewery | Gary | IN |
 
 It's 99% prepared for analysis, and last things can be describe as cosmetic correction. We will replace all **NaN** with **0.0** values, and after it multiple **abv** column with 100 for increasing human readability.
 
@@ -74,8 +59,6 @@ It's 99% prepared for analysis, and last things can be describe as cosmetic corr
 |  | abv | ibu | name_x | style | brewery_id | ounces | name_y | city | state |  
 | 0 | 5.0 | 0.0 | Pub Beer | American Pale Lager | 408 | 12.0 | 10 Barrel Brewing Company | Bend | OR  | 1 | 6.6 | 0.0 | Devil's Cup | American Pale Ale (APA) | 177 | 12.0 | 18th Street Brewery | Gary | IN |  
 | 2 | 7.1 | 0.0 | Rise of the Phoenix | American IPA | 177 | 12.0 | 18th Street Brewery | Gary | IN |  
-| 3 | 9.0 | 0.0 | Sinister | American Double / Imperial IPA | 177 | 12.0 | 18th Street Brewery | Gary | IN |  
-| 4 | 7.5 | 0.0 | Sex and Candy | American IPA | 177 | 12.0 | 18th Street Brewery | Gary | IN |
 
 Ups, I forgot about **name_x** and **name_y**. When we have merged two tables, columns with same names were changed to make them unique.
 
@@ -87,8 +70,6 @@ Ups, I forgot about **name_x** and **name_y**. When we have merged two tables, c
 | 0 | 5.0 | 0.0 | Pub Beer | American Pale Lager | 12.0 | 10 Barrel Brewing Company | Bend | OR |  
 | 1 | 6.6 | 0.0 | Devil's Cup | American Pale Ale (APA) | 12.0 | 18th Street Brewery | Gary | IN |  
 | 2 | 7.1 | 0.0 | Rise of the Phoenix | American IPA | 12.0 | 18th Street Brewery | Gary | IN |  
-| 3 | 9.0 | 0.0 | Sinister | American Double / Imperial IPA | 12.0 | 18th Street Brewery | Gary | IN |  
-| 4 | 7.5 | 0.0 | Sex and Candy | American IPA | 12.0 | 18th Street Brewery | Gary | IN |
 
 Ok, we can start with simple analysis. At the beginning we need to understand what we want to achieve. **We can do anything we want with this data.**
 
@@ -173,8 +154,6 @@ Nope, you can see that Grand Rapids has more craft beer styles than Portland, bu
 | 389 | 6.0 | 0.0 | Star Runner | Belgian Pale Ale | Brewery Vivant |  
 | 390 | 9.8 | 0.0 | Tart Side of the Barrel | American Double / Imperial Stout | Brewery Vivant |  
 | 391 | 6.0 | 0.0 | Linnaeus Mango IPA | American IPA | Brewery Vivant |  
-| 392 | 7.0 | 0.0 | Beasts A'Burnin' | Rauchbier | Brewery Vivant |  
-| 393 | 7.7 | 0.0 | Verdun | Bière de Garde | Brewery Vivant |  
 | ... | ... | ... | ... | ... | ... |
 
 66 rows × 5 columns
