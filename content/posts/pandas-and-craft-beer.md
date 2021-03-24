@@ -13,10 +13,55 @@ At the beginning we need make out data a little bit clearer. In real data analys
     breweries = pd.read_csv('breweries.csv') 
     beers.head() 
 
-| Unnamed: 0 | abv | ibu | id | name | style | brewery_id | ounces |  
-| 0 | 0 | 0.050 | NaN | 1436 | Pub Beer | American Pale Lager | 408 | 12.0 |  
-| 1 | 1 | 0.066 | NaN | 2265 | Devil's Cup | American Pale Ale (APA) | 177 | 12.0 |  
-| 2 | 2 | 0.071 | NaN | 2264 | Rise of the Phoenix | American IPA | 177 | 12.0 |  
+<table>
+   <thead>
+      <tr>
+         <th>Unnamed: 0</th>
+         <th>abv</th>
+         <th>ibu</th>
+         <th>id</th>
+         <th>name</th>
+         <th>style</th>
+         <th>brewery_id</th>
+         <th>ounces</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>0</td>
+         <td>0</td>
+         <td>0.050</td>
+         <td>NaN</td>
+         <td>1436</td>
+         <td>Pub Beer</td>
+         <td>American Pale Lager</td>
+         <td>408</td>
+         <td>12.0</td>
+      </tr>
+      <tr>
+         <td>1</td>
+         <td>1</td>
+         <td>0.066</td>
+         <td>NaN</td>
+         <td>2265</td>
+         <td>Devil&#39;s Cup</td>
+         <td>American Pale Ale (APA)</td>
+         <td>177</td>
+         <td>12.0</td>
+      </tr>
+      <tr>
+         <td>2</td>
+         <td>2</td>
+         <td>0.071</td>
+         <td>NaN</td>
+         <td>2264</td>
+         <td>Rise of the Phoenix</td>
+         <td>American IPA</td>
+         <td>177</td>
+         <td>12.0</td>
+      </tr>
+   </tbody>
+</table>
 
 This table contains some evident problems, such as NaN values in **ibu** column and useless columns **Unnamed: 0** and **id**. Firstly we can remove useless column in beers table with:
 
@@ -28,17 +73,85 @@ In breweries table we will just renamed this column, because of future use in ta
     beers.drop('id', axis=1, inplace=True) 
     beers.head()
 
-|  | abv | ibu | name | style | brewery_id | ounces |
-| 0 | 0.050 | NaN | Pub Beer | American Pale Lager | 408 | 12.0 |
-| 1 | 0.066 | NaN | Devil's Cup | American Pale Ale (APA) | 177 | 12.0 |
-| 2 | 0.071 | NaN | Rise of the Phoenix | American IPA | 177 | 12.0 |
+<table>
+   <thead>
+      <tr>
+         <th></th>
+         <th>abv</th>
+         <th>ibu</th>
+         <th>name</th>
+         <th>style</th>
+         <th>brewery_id</th>
+         <th>ounces</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>0</td>
+         <td>0.050</td>
+         <td>NaN</td>
+         <td>Pub Beer</td>
+         <td>American Pale Lager</td>
+         <td>408</td>
+         <td>12.0</td>
+      </tr>
+      <tr>
+         <td>1</td>
+         <td>0.066</td>
+         <td>NaN</td>
+         <td>Devil&#39;s Cup</td>
+         <td>American Pale Ale (APA)</td>
+         <td>177</td>
+         <td>12.0</td>
+      </tr>
+      <tr>
+         <td>2</td>
+         <td>0.071</td>
+         <td>NaN</td>
+         <td>Rise of the Phoenix</td>
+         <td>American IPA</td>
+         <td>177</td>
+         <td>12.0</td>
+      </tr>
+   </tbody>
+</table>
 
     breweries.head() 
 
-|  | brewery_id | name | city | state |
-| 0 | 0 | NorthGate Brewing | Minneapolis | MN |
-| 1 | 1 | Against the Grain Brewery | Louisville | KY |
-| 2 | 2 | Jack's Abby Craft Lagers | Framingham | MA |
+<table>
+   <thead>
+      <tr>
+         <th></th>
+         <th>brewery_id</th>
+         <th>name</th>
+         <th>city</th>
+         <th>state</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>0</td>
+         <td>0</td>
+         <td>NorthGate Brewing</td>
+         <td>Minneapolis</td>
+         <td>MN</td>
+      </tr>
+      <tr>
+         <td>1</td>
+         <td>1</td>
+         <td>Against the Grain Brewery</td>
+         <td>Louisville</td>
+         <td>KY</td>
+      </tr>
+      <tr>
+         <td>2</td>
+         <td>2</td>
+         <td>Jack&#39;s Abby Craft Lagers</td>
+         <td>Framingham</td>
+         <td>MA</td>
+      </tr>
+   </tbody>
+</table>
 
 Now, when we have column in beers table **brewery_id**, which is simple row index in breweries table, we can merge two tables.
 
