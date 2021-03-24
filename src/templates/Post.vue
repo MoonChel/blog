@@ -43,4 +43,22 @@ query Post ($path: String!) {
 .post-content {
   font-size: 20px;
 }
+
+table td {
+  padding: 5px;
+}
+
+table tr {
+  border: 1px solid #ddd;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+}
 </style>

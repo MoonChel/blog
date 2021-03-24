@@ -2,7 +2,7 @@
   <main class="layout" role="main">
     <slot />
     <hr class="line" />
-    <div style="text-align: center;">
+    <div style="text-align: center">
       <a href="https://keybase.io/vlado_chernenko">Keybase</a>
       |
       <a href="https://www.linkedin.com/in/vladimir-chernenko/">Linkedin</a>
@@ -21,7 +21,7 @@ body {
 }
 
 .layout {
-  max-width: 760px;
+  max-width: 900px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;

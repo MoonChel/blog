@@ -152,16 +152,65 @@ In breweries table we will just renamed this column, because of future use in ta
       </tr>
    </tbody>
 </table>
-
 Now, when we have column in beers table **brewery_id**, which is simple row index in breweries table, we can merge two tables.
 
     beers = beers.merge(breweries, on='brewery_id') 
     beers.head()
 
-|  | abv | ibu | name_x | style | brewery_id | ounces | name_y | city | state |
-| 0 | 0.050 | NaN | Pub Beer | American Pale Lager | 408 | 12.0 | 10 Barrel Brewing Company | Bend | OR |
-| 1 | 0.066 | NaN | Devil's Cup | American Pale Ale (APA) | 177 | 12.0 | 18th Street Brewery | Gary | IN |
-| 2 | 0.071 | NaN | Rise of the Phoenix | American IPA | 177 | 12.0 | 18th Street Brewery | Gary | IN |
+<table>
+   <thead>
+      <tr>
+         <th></th>
+         <th>abv</th>
+         <th>ibu</th>
+         <th>name_x</th>
+         <th>style</th>
+         <th>brewery_id</th>
+         <th>ounces</th>
+         <th>name_y</th>
+         <th>city</th>
+         <th>state</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>0</td>
+         <td>0.050</td>
+         <td>NaN</td>
+         <td>Pub Beer</td>
+         <td>American Pale Lager</td>
+         <td>408</td>
+         <td>12.0</td>
+         <td>10 Barrel Brewing Company</td>
+         <td>Bend</td>
+         <td>OR</td>
+      </tr>
+      <tr>
+         <td>1</td>
+         <td>0.066</td>
+         <td>NaN</td>
+         <td>Devil&#39;s Cup</td>
+         <td>American Pale Ale (APA)</td>
+         <td>177</td>
+         <td>12.0</td>
+         <td>18th Street Brewery</td>
+         <td>Gary</td>
+         <td>IN</td>
+      </tr>
+      <tr>
+         <td>2</td>
+         <td>0.071</td>
+         <td>NaN</td>
+         <td>Rise of the Phoenix</td>
+         <td>American IPA</td>
+         <td>177</td>
+         <td>12.0</td>
+         <td>18th Street Brewery</td>
+         <td>Gary</td>
+         <td>IN</td>
+      </tr>
+   </tbody>
+</table>
 
 It's 99% prepared for analysis, and last things can be describe as cosmetic correction. We will replace all **NaN** with **0.0** values, and after it multiple **abv** column with 100 for increasing human readability.
 
@@ -169,9 +218,60 @@ It's 99% prepared for analysis, and last things can be describe as cosmetic corr
     beers['abv'].fillna(0.0, inplace=True) 
     beers.head()
 
-|  | abv | ibu | name_x | style | brewery_id | ounces | name_y | city | state |  
-| 0 | 5.0 | 0.0 | Pub Beer | American Pale Lager | 408 | 12.0 | 10 Barrel Brewing Company | Bend | OR  | 1 | 6.6 | 0.0 | Devil's Cup | American Pale Ale (APA) | 177 | 12.0 | 18th Street Brewery | Gary | IN |  
-| 2 | 7.1 | 0.0 | Rise of the Phoenix | American IPA | 177 | 12.0 | 18th Street Brewery | Gary | IN |  
+<table>
+   <thead>
+      <tr>
+         <th></th>
+         <th>abv</th>
+         <th>ibu</th>
+         <th>name_x</th>
+         <th>style</th>
+         <th>brewery_id</th>
+         <th>ounces</th>
+         <th>name_y</th>
+         <th>city</th>
+         <th>state</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>0</td>
+         <td>5.0</td>
+         <td>0.0</td>
+         <td>Pub Beer</td>
+         <td>American Pale Lager</td>
+         <td>408</td>
+         <td>12.0</td>
+         <td>10 Barrel Brewing Company</td>
+         <td>Bend</td>
+         <td>OR  </td>
+      </tr>
+      <tr>
+         <td>1</td>
+         <td>6.6</td>
+         <td>0.0</td>
+         <td>Devil&#39;s Cup</td>
+         <td>American Pale Ale (APA)</td>
+         <td>177</td>
+         <td>12.0</td>
+         <td>18th Street Brewery</td>
+         <td>Gary</td>
+         <td>IN</td>
+      </tr>
+      <tr>
+         <td>2</td>
+         <td>7.1</td>
+         <td>0.0</td>
+         <td>Rise of the Phoenix</td>
+         <td>American IPA</td>
+         <td>177</td>
+         <td>12.0</td>
+         <td>18th Street Brewery</td>
+         <td>Gary</td>
+         <td>IN</td>
+      </tr>
+   </tbody>
+</table>
 
 Ups, I forgot about **name_x** and **name_y**. When we have merged two tables, columns with same names were changed to make them unique.
 
@@ -179,10 +279,56 @@ Ups, I forgot about **name_x** and **name_y**. When we have merged two tables, c
     beers.drop('brewery_id', axis=1, inplace=True) 
     beers.head()
 
-|  | abv | ibu | beer | style | ounces | brewery | city | state |  
-| 0 | 5.0 | 0.0 | Pub Beer | American Pale Lager | 12.0 | 10 Barrel Brewing Company | Bend | OR |  
-| 1 | 6.6 | 0.0 | Devil's Cup | American Pale Ale (APA) | 12.0 | 18th Street Brewery | Gary | IN |  
-| 2 | 7.1 | 0.0 | Rise of the Phoenix | American IPA | 12.0 | 18th Street Brewery | Gary | IN |  
+<table>
+   <thead>
+      <tr>
+         <th></th>
+         <th>abv</th>
+         <th>ibu</th>
+         <th>beer</th>
+         <th>style</th>
+         <th>ounces</th>
+         <th>brewery</th>
+         <th>city</th>
+         <th>state</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>0</td>
+         <td>5.0</td>
+         <td>0.0</td>
+         <td>Pub Beer</td>
+         <td>American Pale Lager</td>
+         <td>12.0</td>
+         <td>10 Barrel Brewing Company</td>
+         <td>Bend</td>
+         <td>OR</td>
+      </tr>
+      <tr>
+         <td>1</td>
+         <td>6.6</td>
+         <td>0.0</td>
+         <td>Devil&#39;s Cup</td>
+         <td>American Pale Ale (APA)</td>
+         <td>12.0</td>
+         <td>18th Street Brewery</td>
+         <td>Gary</td>
+         <td>IN</td>
+      </tr>
+      <tr>
+         <td>2</td>
+         <td>7.1</td>
+         <td>0.0</td>
+         <td>Rise of the Phoenix</td>
+         <td>American IPA</td>
+         <td>12.0</td>
+         <td>18th Street Brewery</td>
+         <td>Gary</td>
+         <td>IN</td>
+      </tr>
+   </tbody>
+</table>
 
 Ok, we can start with simple analysis. At the beginning we need to understand what we want to achieve. **We can do anything we want with this data.**
 
@@ -201,12 +347,42 @@ Ok, that was simple, but what if I want to know top 5 states with highest **abv*
 
     beers[['abv', 'state']].sort_values(by='abv', ascending=False).head() 
 
-|  | abv | state |  
-| 2278 | 12.8 | CO |  
-| 70 | 12.5 | KY |  
-| 2189 | 12.0 | IN |  
-| 2279 | 10.4 | CO |  
-| 1857 | 10.0 | NY |
+<table>
+   <thead>
+      <tr>
+         <th></th>
+         <th>abv</th>
+         <th>state</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>2278</td>
+         <td>12.8</td>
+         <td>CO</td>
+      </tr>
+      <tr>
+         <td>70</td>
+         <td>12.5</td>
+         <td>KY</td>
+      </tr>
+      <tr>
+         <td>2189</td>
+         <td>12.0</td>
+         <td>IN</td>
+      </tr>
+      <tr>
+         <td>2279</td>
+         <td>10.4</td>
+         <td>CO</td>
+      </tr>
+      <tr>
+         <td>1857</td>
+         <td>10.0</td>
+         <td>NY</td>
+      </tr>
+   </tbody>
+</table>
 
 People usually understand statistical data better if they are represented in graphs. Pandas can help with it.
 
@@ -222,11 +398,78 @@ Cool, here we can see one interesting thing. Even though **DC** is first in mean
 
     beers[beers['state'].str.contains('CO')].sort_values(by='abv', ascending=False).head()
 
-|  | abv | ibu | beer | style | ounces | brewery | city | state |  
-| 2278 | 12.8 | 0.0 | Lee Hill Series Vol. 5 - Belgian Style Quadrup... | Quadrupel (Quad) | 19.2 | Upslope Brewing Company | Boulder | CO |  
-| 2279 | 10.4 | 0.0 | Lee Hill Series Vol. 4 - Manhattan Style Rye Ale | Rye Beer | 19.2 | Upslope Brewing Company | Boulder | CO |  
-| 1586 | 9.9 | 98.0 | Ten Fidy Imperial Stout (2007) | Russian Imperial Stout | 12.0 | Oskar Blues Brewery | Lyons | CO | | 1578 | 9.9 | 98.0 | Ten Fidy Imperial Stout | Russian Imperial Stout | 12.0 | Oskar Blues Brewery | Longmont | CO |  
-| 2286 | 9.9 | 90.0 | Upslope Imperial India Pale Ale | American Double / Imperial IPA | 19.2 | Upslope Brewing Company | Boulder | CO |
+<table>
+   <thead>
+      <tr>
+         <th></th>
+         <th>abv</th>
+         <th>ibu</th>
+         <th>beer</th>
+         <th>style</th>
+         <th>ounces</th>
+         <th>brewery</th>
+         <th>city</th>
+         <th>state</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>2278</td>
+         <td>12.8</td>
+         <td>0.0</td>
+         <td>Lee Hill Series Vol. 5 - Belgian Style Quadrup...</td>
+         <td>Quadrupel (Quad)</td>
+         <td>19.2</td>
+         <td>Upslope Brewing Company</td>
+         <td>Boulder</td>
+         <td>CO</td>
+      </tr>
+      <tr>
+         <td>2279</td>
+         <td>10.4</td>
+         <td>0.0</td>
+         <td>Lee Hill Series Vol. 4 - Manhattan Style Rye Ale</td>
+         <td>Rye Beer</td>
+         <td>19.2</td>
+         <td>Upslope Brewing Company</td>
+         <td>Boulder</td>
+         <td>CO</td>
+      </tr>
+      <tr>
+         <td>1586</td>
+         <td>9.9</td>
+         <td>98.0</td>
+         <td>Ten Fidy Imperial Stout (2007)</td>
+         <td>Russian Imperial Stout</td>
+         <td>12.0</td>
+         <td>Oskar Blues Brewery</td>
+         <td>Lyons</td>
+         <td>CO</td>
+      </tr>
+      <tr>
+         <td>1578</td>
+         <td>9.9</td>
+         <td>98.0</td>
+         <td>Ten Fidy Imperial Stout</td>
+         <td>Russian Imperial Stout</td>
+         <td>12.0</td>
+         <td>Oskar Blues Brewery</td>
+         <td>Longmont</td>
+         <td>CO</td>
+      </tr>
+      <tr>
+         <td>2286</td>
+         <td>9.9</td>
+         <td>90.0</td>
+         <td>Upslope Imperial India Pale Ale</td>
+         <td>American Double / Imperial IPA</td>
+         <td>19.2</td>
+         <td>Upslope Brewing Company</td>
+         <td>Boulder</td>
+         <td>CO</td>
+      </tr>
+   </tbody>
+</table>
 
 Ok, I have another question to my dataset. Can I please have a graph of top 5 cities sorted by breweries?
 
@@ -262,12 +505,60 @@ Nope, you can see that Grand Rapids has more craft beer styles than Portland, bu
 
     beers[beers['city'].str.contains('Grand Rapids')].drop( ['ounces', 'state', 'city'], axis=1)
 
-|  | abv | ibu | beer | style | brewery |  
-| 388 | 6.7 | 0.0 | Belfort | Saison / Farmhouse Ale | Brewery Vivant |  
-| 389 | 6.0 | 0.0 | Star Runner | Belgian Pale Ale | Brewery Vivant |  
-| 390 | 9.8 | 0.0 | Tart Side of the Barrel | American Double / Imperial Stout | Brewery Vivant |  
-| 391 | 6.0 | 0.0 | Linnaeus Mango IPA | American IPA | Brewery Vivant |  
-| ... | ... | ... | ... | ... | ... |
+<table>
+   <thead>
+      <tr>
+         <th></th>
+         <th>abv</th>
+         <th>ibu</th>
+         <th>beer</th>
+         <th>style</th>
+         <th>brewery</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>388</td>
+         <td>6.7</td>
+         <td>0.0</td>
+         <td>Belfort</td>
+         <td>Saison / Farmhouse Ale</td>
+         <td>Brewery Vivant</td>
+      </tr>
+      <tr>
+         <td>389</td>
+         <td>6.0</td>
+         <td>0.0</td>
+         <td>Star Runner</td>
+         <td>Belgian Pale Ale</td>
+         <td>Brewery Vivant</td>
+      </tr>
+      <tr>
+         <td>390</td>
+         <td>9.8</td>
+         <td>0.0</td>
+         <td>Tart Side of the Barrel</td>
+         <td>American Double / Imperial Stout</td>
+         <td>Brewery Vivant</td>
+      </tr>
+      <tr>
+         <td>391</td>
+         <td>6.0</td>
+         <td>0.0</td>
+         <td>Linnaeus Mango IPA</td>
+         <td>American IPA</td>
+         <td>Brewery Vivant</td>
+      </tr>
+      <tr>
+         <td>...</td>
+         <td>...</td>
+         <td>...</td>
+         <td>...</td>
+         <td>...</td>
+         <td>...</td>
+      </tr>
+   </tbody>
+</table>
 
 66 rows × 5 columns
 
